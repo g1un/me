@@ -20,8 +20,8 @@ mixin player()
                         video: 'https://vimeo.com/6755067'
                     }
                 ]
-            each val in slides
-                .player__item(style=`background-image: url(${val.image})`).js-player-slider-item
+            each val, i in slides
+                .player__item(class=`${i === 0 ? '_active' : ''}`, style=`background-image: url(${val.image})`).js-player-slider-item
                     .player__video(data-url=val.video, style='display: none;').js-player-video
         .player__wrapper
             .player__controls

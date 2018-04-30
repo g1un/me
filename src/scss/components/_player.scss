@@ -20,6 +20,7 @@
     }
 
     &__item {
+        display: none;
         position: relative;
         height: 100%;
         overflow: hidden;
@@ -27,6 +28,10 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
+
+        &._active {
+            display: block;
+        }
     }
 
     &__video {

@@ -1,4 +1,4 @@
-import Slider from './videoSlider';
+import VideoSwitcher from './videoSwitcher';
 import Player from '@vimeo/player';
 
 export default class MeVimeo {
@@ -9,8 +9,8 @@ export default class MeVimeo {
     init() {
         if(!this.videos.length) return;
 
-        this.slider = new Slider(i => { this.setSliderState(i) });
-        this.slider.init();
+        this.videoSwitcher = new VideoSwitcher((i) => this.setSliderState(i));
+        this.videoSwitcher.init();
 
         this.playerSlider = document.querySelector('.js-player-slider');
         this.vimeos = [];
@@ -20,7 +20,6 @@ export default class MeVimeo {
                 elem: video,
                 player: new Player(video, {
                     id: video.dataset.url,
-                    // autoplay: true,
                     muted: true,
                     autopause: false
                 })
@@ -54,7 +53,9 @@ export default class MeVimeo {
         //video ended
         this.vimeos.forEach(({player}, i) => {
             player.on('ended', data => {
-                this.slider.sliderGoTo((i + 1) % this.vimeos.length);
+                let index = (i + 1) % this.vimeos.length;
+                this.videoSwitcher.setActive(index);
+                this.setSliderState(index);
             });
         });
     }
