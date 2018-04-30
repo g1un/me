@@ -1,0 +1,49 @@
+.video-desc {
+    display: none;
+    max-width: 282px;
+
+    &._show {
+        display: block;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        @include msc-700();
+        font-size: 20px;
+        line-height: normal;
+        letter-spacing: 1.8px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        margin-bottom: 20px;
+        @include msc-300();
+        font-size: 16px;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: 0.8px;
+        color: #fff;
+    }
+
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        i {
+            flex: 1 0 auto;
+        }
+
+        span {
+            flex: 0 1 auto;
+            padding-left: 10px;
+            @include msc-300();
+            font-size: 16px;
+            line-height: normal;
+            letter-spacing: 0.8px;
+            color: #fff;
+            text-align: right;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+mixin player()
+    section.player
+        .player__list.js-player-slider
+            -
+                var slides = [
+                    {
+                        image: 'img/header.jpg',
+                        video: 'https://vimeo.com/138403079'
+                    },
+                    {
+                        image: 'http://placebeard.it/1440/1080',
+                        video: 'https://vimeo.com/267187518'
+                    },
+                    {
+                        image: 'http://placebeard.it/1080/1440',
+                        video: 'https://vimeo.com/241267548'
+                    },
+                    {
+                        image: 'http://placebeard.it/1440/900',
+                        video: 'https://vimeo.com/6755067'
+                    }
+                ]
+            each val in slides
+                .player__item(style=`background-image: url(${val.image})`).js-player-slider-item
+                    .player__video(data-url=val.video, style='display: none;').js-player-video
+        .player__wrapper
+            .player__controls
+                -
+                    var controls = ['MarketEmotion', 'Entertainment', 'Business', 'Openair']
+                each val, i in controls
+                    button.player__button(class=`${i === 0 ? '_active' : ''}`).js-player-button= val
+            .player__descs.js-video-descriptions
+                each val, i in controls
+                    .video-desc(class=`${i === 0 ? '_show' : ''}`).js-video-descriptions-item
+                        h4.video-desc__title= val
+                        p.video-desc__text
+                            |incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco quaerat voluptatem.
+                        a(href=slides[i].video, target='_blank').video-desc__link
+                            i.icon
+                                include ../svg/vimeo_logo.svg
+                            span Смотреть на Vimeo

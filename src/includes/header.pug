@@ -1,0 +1,21 @@
+mixin header()
+    header.header
+        a(href='#').header__logo
+            i.icon.header__logo-icon
+                include ../svg/logo_me.svg
+            i.icon.header__logo-icon._scrolled
+                include ../svg/logo_wide.svg
+        .header__sandwich Menu
+        .header__menu
+            .header__menu-title Меню
+            .nav.header__nav
+                ul.nav__list
+                    each val in ['Главная', 'Портфолио', 'О нас']
+                        li.nav__item
+                            a(href='#').nav__link= val
+            .social.header__social
+                -
+                    var social = [svg.telegram, svg.insta, svg.facebook]
+                each val in social
+                    a(href='#').social__link
+                        i.icon !{val}

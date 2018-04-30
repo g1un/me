@@ -1,0 +1,19 @@
+//EXTERNAL
+@import "components/sprite";
+@import "~slick-carousel/slick/slick";
+
+//BASE
+@import "components/variables";
+@import "components/mixins";
+@import "components/fonts";
+@import "components/icon";
+
+//GENERAL
+@import "components/general";
+@import "components/header";
+@import "components/nav";
+@import "components/social";
+
+//CUSTOM
+@import "components/player";
+@import "components/video-desc";

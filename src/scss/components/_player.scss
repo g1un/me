@@ -1,0 +1,104 @@
+.player {
+    position: relative;
+    overflow: hidden;
+
+    &__list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: -55px;
+        z-index: -1;
+
+        .slick {
+
+            &-list,
+            &-track {
+                height: 100%;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        background-color: #000;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    &__video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &._stretch-height {
+            height: 100%;
+        }
+
+        &._stretch-width {
+            width: 100%;
+        }
+
+        iframe {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__wrapper {
+        padding: 104px 40px 47px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    &__controls {
+        margin-bottom: 40px;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    &__button {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        @include msc-700();
+        font-size: 17px;
+        line-height: normal;
+        letter-spacing: 2.7px;
+        color: #fff;
+        text-transform: uppercase;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 100%;
+            bottom: 7px;
+            height: 2px;
+            background: $red;
+            transition: right .5s;
+        }
+
+        &._active {
+
+            &:before {
+                right: -15px;
+            }
+        }
+    }
+}
