@@ -9,9 +9,70 @@ export default class MeVimeo {
     init() {
         if(!this.videos.length) return;
 
+        this.initSwitcher();
+
+        this.checkWindowSize();
+
+        window.addEventListener('resize', () => this.checkWindowSize());
+    }
+
+    initSwitcher() {
         this.videoSwitcher = new VideoSwitcher((i) => this.setSliderState(i));
         this.videoSwitcher.init();
+    }
 
+    checkWindowSize() {
+        //ширина экрана >= 768
+        if(window.innerWidth >= 768) {
+            //плееры не инициализированы
+            if(!this.isMeVideosInitialized) {
+                //инициализируем плееры
+                this.initMeVideos(this.videoSwitcher.getActiveIndex());
+                //запоминаем что плееры были иницииализированы
+                this.isMeVideosInitialized = true;
+            }
+            //плееры были инициализированы
+            else {
+                //инициализированные плееры стоят на паузе
+                if(this.isMeVideosStopped) {
+                    //запускаем инициализрованные стоящие на паузе плееры с активного слайда
+                    this.setSliderState(this.videoSwitcher.getActiveIndex());
+                    //запоминаем что плееры запущены
+                    this.isMeVideosStopped = false;
+                }
+                //инициалиализированные плееры работают
+                else {
+                    //ничего не делаем
+                    return;
+                }
+            }
+        }
+        //ширина экрана < 768
+        else {
+            //если плееры не были инициализрованы
+            if(!this.isMeVideosInitialized) {
+                //ничего не делаем
+                return;
+            }
+            //если плееры были инициализированы
+            else {
+                //если инициализированные плееры стоят на паузе
+                if(this.isMeVideosStopped) {
+                    //ничего не делаем
+                    return;
+                }
+                //если инициализированные плееры работают
+                else {
+                    //стави инициализированные работающие плееры на паузу
+                     this.setSliderState(-1);
+                     //запоминаем что поставили плееры на паузу
+                    this.isMeVideosStopped = true;
+                }
+            }
+        }
+    }
+
+    initMeVideos(activeIndex) {
         this.playerSlider = document.querySelector('.js-player-slider');
         this.vimeos = [];
 
@@ -37,7 +98,7 @@ export default class MeVimeo {
                 this.setStretchType(this.vimeos[i]);
                 this.vimeos[i].dimensionsIsLoaded = true;
 
-                if(i === 0) this.vimeos[i].player.play();
+                if(i === activeIndex) this.vimeos[i].player.play();
             });
         });
 

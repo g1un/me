@@ -43,12 +43,8 @@
         justify-content: center;
         align-items: center;
 
-        &._stretch-height {
-            height: 100%;
-        }
-
-        &._stretch-width {
-            width: 100%;
+        @include sm() {
+            display: none;
         }
 
         iframe {

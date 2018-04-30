@@ -1,3 +1,5 @@
+import VideoDesc from './videoDesc';
+
 export default class VideoSwitcher {
     constructor(goToVideo) {
         this.videos = document.querySelectorAll('.js-player-slider-item');
@@ -7,19 +9,25 @@ export default class VideoSwitcher {
     init() {
         if(!this.videos.length) return;
 
+        this.videoDesc = new VideoDesc();
+        this.videoDesc.init();
+
         this.playerButtons = document.querySelectorAll('.js-player-button');
+        this.activeIndex = 0;
 
         [].forEach.call(this.playerButtons, (btn, i) => {
             btn.addEventListener('click', () => {
-                this.goToVideo(i);
+                if(window.innerWidth >= 768) this.goToVideo(i);
                 this.setActive(i);
             });
         });
     }
 
     setActive(i) {
+        this.activeIndex = i;
         this.setActiveVideo(i);
         this.setActiveButton(i);
+        this.videoDesc.setActiveDescription(i);
     }
 
     setActiveVideo(index) {
@@ -40,5 +48,9 @@ export default class VideoSwitcher {
                 btn.classList.remove('_active');
             }
         });
+    }
+
+    getActiveIndex() {
+        return this.activeIndex;
     }
 }
