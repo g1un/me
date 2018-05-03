@@ -63,7 +63,7 @@ export default class MeVimeo {
                 }
                 //если инициализированные плееры работают
                 else {
-                    //стави инициализированные работающие плееры на паузу
+                    //ставим инициализированные работающие плееры на паузу
                      this.setSliderState(-1);
                      //запоминаем что поставили плееры на паузу
                     this.isMeVideosStopped = true;
@@ -141,11 +141,9 @@ export default class MeVimeo {
 
     setSliderState(index) {
         this.vimeos.forEach(({player}, i) => {
-            if(i === index) {
-                player.play();
-            } else {
-                player.pause();
-            }
-        })
+            player.pause();
+        });
+        if(index < 0) return;
+        this.vimeos[index].player.play();
     }
 }

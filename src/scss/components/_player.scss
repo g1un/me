@@ -9,6 +9,8 @@
         right: 0;
         bottom: -55px;
         z-index: -1;
+        width: 100%;
+        overflow: hidden;
 
         .slick {
 
@@ -17,10 +19,25 @@
                 height: 100%;
             }
         }
+
+        &-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            transform: translateX(0%);
+            transition: transform .5s;
+
+            @include after-sm() {
+                transition: none;
+            }
+        }
     }
 
     &__item {
-        display: none;
+        flex: 1 1 100vw;
+        min-width: 100vw;
         position: relative;
         height: 100%;
         overflow: hidden;
@@ -29,8 +46,12 @@
         background-position: center center;
         background-size: cover;
 
-        &._active {
-            display: block;
+        @include after-sm() {
+            display: none;
+
+            &._active {
+                display: block;
+            }
         }
     }
 

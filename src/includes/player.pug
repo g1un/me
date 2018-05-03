@@ -1,28 +1,29 @@
 mixin player()
     section.player
         .player__list.js-player-slider
-            -
-                var slides = [
-                    {
-                        image: 'img/header.jpg',
-                        video: 'https://vimeo.com/138403079'
-                    },
-                    {
-                        image: 'http://placebeard.it/1440/1080',
-                        video: 'https://vimeo.com/267187518'
-                    },
-                    {
-                        image: 'http://placebeard.it/1080/1440',
-                        video: 'https://vimeo.com/241267548'
-                    },
-                    {
-                        image: 'http://placebeard.it/1440/900',
-                        video: 'https://vimeo.com/6755067'
-                    }
-                ]
-            each val, i in slides
-                .player__item(class=`${i === 0 ? '_active' : ''}`, style=`background-image: url(${val.image})`).js-player-slider-item
-                    .player__video(data-url=val.video, style='display: none;').js-player-video
+            .player__list-wrapper.js-player-slider-wrapper
+                -
+                    var slides = [
+                        {
+                            image: 'img/header.jpg',
+                            video: 'https://vimeo.com/138403079'
+                        },
+                        {
+                            image: 'http://placebeard.it/1440/1080',
+                            video: 'https://vimeo.com/267187518'
+                        },
+                        {
+                            image: 'http://placebeard.it/1080/1440',
+                            video: 'https://vimeo.com/241267548'
+                        },
+                        {
+                            image: 'http://placebeard.it/1440/900',
+                            video: 'https://vimeo.com/6755067'
+                        }
+                    ]
+                each val, i in slides
+                    .player__item(class=`${i === 0 ? '_active' : ''}`, style=`background-image: url(${val.image})`).js-player-slider-item
+                        .player__video(data-url=val.video, style='display: none;').js-player-video
         .player__wrapper
             .player__controls
                 -

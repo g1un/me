@@ -11,11 +11,9 @@ export default class VideoDesc {
 
     setActiveDescription(index) {
         [].forEach.call(this.descriptions, (description, i) => {
-            if(i === index) {
-                description.classList.add('_show');
-            } else {
-                description.classList.remove('_show');
-            }
+            description.classList.remove('_show');
         });
+
+        this.descriptions[index].classList.add('_show');
     }
 }
