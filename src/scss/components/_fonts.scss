@@ -13,3 +13,35 @@
 		url(~subset-MuseoSansCyrl-700.woff) format('woff');
     font-weight: 700;
 }
+
+@font-face {
+	font-family: 'geometria-bold';
+	src:
+		url(~geometria-bold-webfont.woff2) format('woff2'),
+		url(~geometria-bold-webfont.woff) format('woff');
+    font-weight: 700;
+}
+
+@font-face {
+	font-family: 'geometria-light';
+	src:
+		url(~geometria-light-webfont.woff2) format('woff2'),
+		url(~geometria-light-webfont.woff) format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+	font-family: 'geometria';
+	src:
+		url(~geometria-webfont.woff2) format('woff2'),
+		url(~geometria-webfont.woff) format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+	font-family: 'geometria-extralight';
+	src:
+		url(~geometria-extralight-webfont.woff2) format('woff2'),
+		url(~geometria-extralight-webfont.woff) format('woff');
+    font-weight: 200;
+}

@@ -88,6 +88,26 @@
     font-weight: 700;
 }
 
+@mixin g-700 {
+    font-family: 'geometria-bold', sans-serif;
+    font-weight: 700;
+}
+
+@mixin g-300 {
+    font-family: 'geometria-light', sans-serif;
+    font-weight: 300;
+}
+
+@mixin g-400 {
+    font-family: 'geometria', sans-serif;
+    font-weight: 400;
+}
+
+@mixin g-200 {
+    font-family: 'geometria-extralight', sans-serif;
+    font-weight: 200;
+}
+
 //media
 //lg
 @mixin lg() {
@@ -96,7 +116,7 @@
     }
 }
 @mixin after-lg() {
-    @media (max-width: $lg+px) {
+    @media (min-width: $lg+px) {
         @content
     }
 }

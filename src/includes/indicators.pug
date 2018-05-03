@@ -1,0 +1,41 @@
+mixin indicators()
+    section.indicators.me-container
+        h2.indicators__title Market #[span emotion]
+        p.indicators__text Есть ряд показателей, необходимых каждому агентству,  чтобы быть лидером рынка
+        .slick-slider.indicators__list.js-slick-slider-container
+            .slick-slider__arrows.js-slick-slider-arrows
+            .indicators__slider.js-slick-slider
+                -
+                    var indicators = [
+                        {
+                            title: 'Экспертиза',
+                            val: '1',
+                            comment: 'Согласно рейтингу Adindex в сегменте HR'
+                        },
+                        {
+                            title: 'качество',
+                            val: '9,8',
+                            comment: 'Средняя оценка по обратной связи от клиента'
+                        },
+                        {
+                            title: 'клиентский сервис',
+                            val: '12',
+                            comment: 'Мероприятий в год для наших клиентов'
+                        },
+                        {
+                            title: 'креатив',
+                            val: '28',
+                            comment: 'Наград за 4 года'
+                        },
+                        {
+                            title: 'масштаб',
+                            val: '27 300',
+                            comment: 'Человек в Олимпийском за 2 дня на нашем мероприятии'
+                        }
+                    ]
+                each val, i in indicators
+                    .indicators-item(class=`${i === 4 ? '_wide' : ''}`).indicators__item
+                        h3.indicators-item__title= val.title
+                        .indicators-item__val= val.val
+                        p.indicators-item__comment= val.comment
+            .indicators__dots.slick-slider__dots.js-slick-slider-dots
