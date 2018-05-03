@@ -12,14 +12,6 @@
         width: 100%;
         overflow: hidden;
 
-        .slick {
-
-            &-list,
-            &-track {
-                height: 100%;
-            }
-        }
-
         &-wrapper {
             position: absolute;
             top: 0;
@@ -82,12 +74,25 @@
         align-items: flex-end;
         min-height: 100vh;
         position: relative;
+
+        @include after-sm() {
+            padding: 104px 149px 74px;
+        }
     }
 
     &__controls {
         margin-bottom: 40px;
         width: 100%;
         max-width: 280px;
+
+        @include after-sm() {
+            padding: 149px 0 0 74px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transform-origin: 0 0;
+            transform: rotate(-90deg);
+        }
     }
 
     &__button {

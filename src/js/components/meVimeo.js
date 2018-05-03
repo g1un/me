@@ -127,13 +127,11 @@ export default class MeVimeo {
         let sliderRatio = sliderWidth / sliderHeight;
 
         if(vimeo.ratio >= sliderRatio) {
-            // vimeo.elem.classList.add('_stretch-height');
-            vimeo.elem.style.height = Math.round(sliderHeight * vimeo.iframeRatio/vimeo.ratio) + 'px';
-            vimeo.elem.style.width = Math.round(sliderHeight * vimeo.iframeRatio) + 'px';
+            vimeo.elem.style.height = Math.ceil(sliderHeight * vimeo.iframeRatio/vimeo.ratio) + 'px';
+            vimeo.elem.style.width = Math.ceil(sliderHeight * vimeo.iframeRatio) + 'px';
         } else {
-            // vimeo.elem.classList.add('_stretch-width');
-            vimeo.elem.style.width = Math.round(sliderWidth * vimeo.iframeRatio/vimeo.ratio) + 'px';
-            vimeo.elem.style.height = Math.round(sliderWidth * vimeo.iframeRatio) + 'px';
+            vimeo.elem.style.width = Math.ceil(sliderWidth * vimeo.iframeRatio/vimeo.ratio) + 'px';
+            vimeo.elem.style.height = Math.ceil(sliderWidth * vimeo.iframeRatio) + 'px';
         }
 
         vimeo.elem.style.display = '';

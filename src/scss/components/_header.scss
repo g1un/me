@@ -4,14 +4,20 @@
     left: 0;
     right: 0;
     z-index: 1;
-    padding: 36px 40px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: transparent;
+    transition: background .25s;
 
     @include after-sm() {
-        padding: 31px 78px;
+        padding: 28px 78px;
         justify-content: flex-end;
+    }
+    
+    &._scrolled {
+        background: #000;
     }
 
     &__logo {
@@ -20,13 +26,6 @@
         svg {
             width: 50px;
             height: auto;
-        }
-
-        &-icon {
-
-            &._scrolled {
-                display: none;
-            }
         }
 
         @include after-sm() {
@@ -41,9 +40,46 @@
         }
     }
 
+    &._scrolled:not(._opened) & {
+
+        &__logo {
+
+            @include after-sm() {
+                top: 20px;
+                left: 78px;
+                transform: none;
+            }
+        }
+    }
+
+    &._opened & {
+
+        &__logo {
+            position: relative;
+            z-index: 1;
+
+            @include after-sm() {
+                position: absolute;
+            }
+
+            svg {
+
+                path {
+                    fill: #fff;
+
+                    @include after-sm() {
+                        fill: $red;
+                    }
+                }
+            }
+        }
+    }
+
     &__sandwich {
+        padding-left: 29px;
         display: flex;
         align-items: center;
+        position: relative;
         cursor: pointer;
         @include msc-300();
         font-size: 12px;
@@ -52,14 +88,65 @@
         color: #fff;
         text-transform: uppercase;
 
-        &:before {
-            margin-right: 15px;
+        &:before,
+        &:after {
             content: '';
+            position: absolute;
+            left: 0;
             width: 14px;
-            height: 4px;
-            border-top: 1px solid #fff;
-            border-bottom: 1px solid #fff;
-            box-sizing: border-box;
+            height: 1px;
+            background: #fff;
+            transition: all .25s;
+        }
+
+        &:before {
+            top: calc(50% - 2px);
+        }
+
+        &:after {
+            top: calc(50% + 1px);
+        }
+    }
+
+    &._opened & {
+
+        &__sandwich {
+            z-index: 1;
+
+            &:before,
+            &:after {
+                top: 50%;
+            }
+
+            &:after {
+                transform: rotate(45deg);
+            }
+
+            &:before {
+                transform: rotate(-45deg);
+            }
+
+            @include after-sm() {
+                padding: 0;
+                font-size: 0;
+                width: 37px;
+                height: 37px;
+
+                &:before,
+                &:after {
+                    width: 50px;
+                    height: 2px;
+                    background: #000;
+                }
+
+                &:after {
+                    transform: translateX(-8px) rotate(45deg);
+                }
+
+                &:before {
+                    transform: translateX(-8px) rotate(-45deg);
+                }
+            }
         }
     }
 
@@ -68,26 +155,94 @@
 
         @include after-sm() {
             display: block;
+        }
+    }
 
-            &-title {
-                display: none;
+    &._opened & {
+
+        &__menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 163px 38px 40px;
+            overflow: auto;
+            background: $red;
+
+            @include after-sm() {
+                padding: 72px 0 0;
+                justify-content: center;
+                align-items: center;
+                background: #fff;
             }
         }
     }
 
     &__nav {
 
+        &-title {
+            display: none;
+        }
+
         @include after-sm() {
             display: none;
+
+            &-title {
+                display: block;
+                margin-bottom: 76px;
+                @include msc-300();
+                font-size: 22px;
+                line-height: 1.05;
+                letter-spacing: 1.7px;
+                color: #000;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &._opened & {
+
+        &__nav {
+            flex: 1 0 auto;
+            margin-bottom: 30px;
+
+            @include after-sm() {
+                flex: 0 0 auto;
+                margin-bottom: 0;
+                padding: 0 40px 72px;
+                display: block;
+                max-height: 100%;
+                overflow: auto;
+            }
         }
     }
 
     &__social {
+        flex: 0 0 auto;
 
         &:before {
             content: '';
             width: 165/1439*100vw;
             max-width: 165px;
+        }
+    }
+
+    &._opened & {
+
+        &__social {
+
+            &:before {
+                display: none;
+            }
+
+            @include after-sm() {
+                display: none;
+            }
         }
     }
 }

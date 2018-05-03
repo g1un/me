@@ -4,9 +4,23 @@
     align-items: center;
 
     &__link {
+        display: block;
 
         &:not(:last-child) {
             margin-right: 15px;
+        }
+    }
+}
+
+header._opened {
+
+    .social {
+
+        &__link {
+
+            &:not(:last-child) {
+                margin-right: 23px;
+            }
         }
     }
 }

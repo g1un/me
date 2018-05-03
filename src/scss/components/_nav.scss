@@ -1,3 +1,58 @@
 .nav {
 
+    &__item {
+
+        &:not(:last-child) {
+            margin-bottom: 26px;
+
+            @include after-sm() {
+                margin-bottom: 47px;
+            }
+        }
+
+        @include after-sm() {
+            text-align: center;
+        }
+    }
+
+    &__link {
+        @include msc-700();
+        font-size: 17px;
+        line-height: normal;
+        letter-spacing: 2.7px;
+        color: #fff;
+        text-transform: uppercase;
+
+        &._active {
+            position: relative;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: -3px;
+                right: 4px;
+                transform: translateY(-50%);
+                height: 2px;
+                background: #fff;
+            }
+        }
+
+        @include after-sm() {
+            font-size: 37px;
+            letter-spacing: 5.9px;
+            text-align: center;
+            color: #000;
+
+            &._active {
+
+                &:before {
+                    left: -24px;
+                    right: -30px;
+                    background: $red;
+                }
+            }
+        }
+    }
 }
