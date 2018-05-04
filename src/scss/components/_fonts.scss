@@ -15,6 +15,14 @@
 }
 
 @font-face {
+	font-family: 'MuseoSansCyrl-500';
+	src:
+		url(~subset-MuseoSansCyrl-500.woff2) format('woff2'),
+		url(~subset-MuseoSansCyrl-500.woff) format('woff');
+    font-weight: 700;
+}
+
+@font-face {
 	font-family: 'geometria-bold';
 	src:
 		url(~geometria-bold-webfont.woff2) format('woff2'),
@@ -44,4 +52,12 @@
 		url(~geometria-extralight-webfont.woff2) format('woff2'),
 		url(~geometria-extralight-webfont.woff) format('woff');
     font-weight: 200;
+}
+
+@font-face {
+	font-family: 'geometria-medium';
+	src:
+		url(~geometria-medium-webfont.woff2) format('woff2'),
+		url(~geometria-medium-webfont.woff) format('woff');
+    font-weight: 500;
 }

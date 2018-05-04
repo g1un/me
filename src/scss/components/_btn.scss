@@ -1,0 +1,20 @@
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 12px 32px;
+    border-radius: 20px;
+    background: $red;
+    cursor: pointer;
+    @include msc-500();
+    font-size: 13px;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include after-sm() {
+        @include msc-300();
+    }
+}
