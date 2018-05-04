@@ -1,0 +1,14 @@
+mixin portfolio()
+    section.portfolio.me-container.js-portfolio
+        h2.txt-title-1.portfolio__title портфолио
+        ul.portfolio__list
+            -var i = 0
+            while i < 9
+                -i++
+                li.portfolio__item
+                    .portfolio__item-wrapper
+                        a(href='#', style=`background-image: url('http://placebeard.it/6${i}0');`).portfolio__link
+                            span.portfolio__link-title Очень длинное название номер #{i}
+                            .portfolio__link-hover
+                                i.icon.portfolio__link-icon !{svg['portfolio-icon']}
+        .btn-1.portfolio__btn.js-portfolio-btn Показать все

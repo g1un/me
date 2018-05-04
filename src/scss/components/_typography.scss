@@ -1,0 +1,12 @@
+.txt-title-1 {
+    @include g-700();
+    font-size: 34px;
+    line-height: 2.12;
+    color: #000;
+    text-transform: uppercase;
+
+    @include after-lg() {
+        font-size: 83px;
+        line-height: 0.87;
+    }
+}

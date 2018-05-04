@@ -17,4 +17,18 @@
     @include after-sm() {
         @include msc-300();
     }
+
+    &-1 {
+        display: inline-block;
+        vertical-align: top;
+        padding: 8px 31px;
+        border: solid 1px #979797;
+        border-radius: 17px;
+        cursor: pointer;
+        @include msc-300();
+        font-size: 15px;
+        letter-spacing: 0.1px;
+        text-align: center;
+        color: #a6a6a6;
+    }
 }

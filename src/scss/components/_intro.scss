@@ -31,7 +31,7 @@
         text-align: center;
         color: #000;
 
-        @include after-md() {
+        @include after-lg() {
             margin-bottom: 25px;
             max-width: 500px;
             @include g-700();

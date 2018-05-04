@@ -1,0 +1,36 @@
+mixin events()
+    section.events.me-container
+        h2.events__title мероприятия
+        ul.events__list
+            -
+                var events = [
+                    {
+                        svg: svg['event-1'],
+                        title: 'Деловые события'
+                    },
+                    {
+                        svg: svg['event-2'],
+                        title: 'HR — меропрития'
+                    },
+                    {
+                        svg: svg['event-3'],
+                        title: 'Тимбилдинги'
+                    },
+                    {
+                        svg: svg['event-4'],
+                        title: 'MICE'
+                    },
+                    {
+                        svg: svg['event-5'],
+                        title: 'B2B'
+                    },
+                    {
+                        svg: svg['event-6'],
+                        title: 'Уникальные мероприятия'
+                    }
+                ]
+            each val in events
+                li.events__item
+                    i.icon.events__icon !{val.svg}
+                    h3.events__item-title= val.title
+
