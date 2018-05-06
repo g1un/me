@@ -1,0 +1,58 @@
+.clients {
+    padding: 0 20px 70px;
+    text-align: center;
+
+    @include after-md() {
+        padding: 0 149px 144px;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+        text-align: center;
+
+        @include after-lg() {
+            text-align: left;
+        }
+    }
+
+    &__list {
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        padding: 10px;
+        flex: 1 1 25%;
+        max-width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 0;
+
+        @include after-md() {
+            padding: 25px 10px;
+            flex: 1 1 100/7 * 1%;
+            max-width: 100 / 7 * 1%;
+        }
+
+        &:nth-child(n+29) {
+            display: none;
+
+            @include after-md() {
+                display: flex;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__btn {
+
+        @include after-md() {
+            display: none;
+        }
+    }
+}

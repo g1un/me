@@ -1,0 +1,12 @@
+mixin awards()
+    section.awards.me-container
+        h2.txt-title-1.awards__title Награды
+        ul.awards__list
+            -var i = 0
+            while i < 6
+                -i++
+                li.awards__item
+                    .awards__image
+                        img(src='img/gea.png', alt='')
+                    .awards__year 2014-2015
+                    .awards__result Shortlist

@@ -23,6 +23,14 @@
 }
 
 @font-face {
+	font-family: 'MuseoSansCyrl-900';
+	src:
+		url(~subset-MuseoSansCyrl-900.woff2) format('woff2'),
+		url(~subset-MuseoSansCyrl-900.woff) format('woff');
+    font-weight: 900;
+}
+
+@font-face {
 	font-family: 'geometria-bold';
 	src:
 		url(~geometria-bold-webfont.woff2) format('woff2'),

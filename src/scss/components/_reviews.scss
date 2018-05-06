@@ -1,0 +1,182 @@
+.reviews {
+    margin-bottom: 100px;
+    padding: 0 20px;
+
+    @include after-md() {
+        padding: 0 149px;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        text-align: center;
+
+        @include after-lg() {
+            margin-bottom: 80px;
+            text-align: left;
+        }
+    }
+
+    &__list {
+        position: relative;
+        overflow: hidden;
+        border-radius: 13px;
+        border: 1px solid $red;
+        box-shadow: 0 12px 47px 0 rgba(0, 0, 0, 0.07);
+
+        @include after-sm() {
+            border-width: 2px;
+            box-shadow: none;
+        }
+    }
+
+    &__arrows {
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @include after-sm() {
+            bottom: 65px;
+            left: 50%;
+            padding-left: 55px;
+            width: 50%;
+            justify-content: flex-start;
+        }
+
+        .slick-slider-arrow {
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            transform: none;
+            width: 40px;
+            height: 40px;
+
+            @include after-sm() {
+                width: 36px;
+                height: 36px;
+            }
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+
+            &._prev {
+
+                &:before {
+                    left: 14px;
+
+                    @include after-sm() {
+                        left: 12px;
+                    }
+                }
+            }
+
+            &._next {
+
+                &:before {
+                    left: 8px;
+
+                    @include after-sm() {
+                        left: 7px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item {
+        padding: 20px;
+        line-height: 0;
+
+        @include after-sm() {
+            display: flex !important;
+        }
+
+        &:hover,
+        &:focus {
+            outline: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__image {
+        padding-bottom: 60px;
+
+        @include after-sm() {
+            flex: 1 1 50%;
+            max-width: 50%;
+            padding: 50px 40px 40px 20px;
+        }
+    }
+
+    &__info {
+        padding: 0 0 33px;
+
+        &:not(:first-child) {
+            padding-top: 33px;
+            padding-bottom: 106px;
+            border-top: 2px solid $red;
+
+            @include after-sm() {
+                padding: 50px 50px 110px 55px;
+                border-top: none;
+                position: relative;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -20px;
+                    left: 0;
+                    bottom: -20px;
+                    width: 2px;
+                    background: $red;
+                }
+            }
+        }
+
+        @include after-sm() {
+            padding: 50px 55px 110px 50px;
+            flex: 1 1 50%;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__text {
+        flex: 1 1 auto;
+        margin-bottom: 30px;
+        @include msc-300();
+        font-size: 21px;
+        line-height: 1.71;
+        letter-spacing: 0.4px;
+        text-align: center;
+        color: #000;
+        text-transform: uppercase;
+
+        @include after-sm() {
+            font-size: 27px;
+            line-height: 1.33;
+            letter-spacing: 1.8px;
+            text-align: left;
+        }
+    }
+
+    &__author {
+        @include msc-900();
+        font-size: 18px;
+        line-height: 1.5;
+        letter-spacing: 1.2px;
+        text-align: center;
+        color: #000;
+
+        @include after-sm() {
+            text-align: left;
+        }
+    }
+}

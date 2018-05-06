@@ -4,9 +4,9 @@
     position: relative;
     text-align: center;
 
-    @include after-lg() {
+    @include after-md() {
         margin: 0 auto 196px;
-        padding: 0 149 / 1440 * 100% 0;
+        padding: 0 149px 0;
         font-size: 0;
     }
 

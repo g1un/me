@@ -93,6 +93,11 @@
     font-weight: 500;
 }
 
+@mixin msc-900 {
+    font-family: 'MuseoSansCyrl-900', sans-serif;
+    font-weight: 900;
+}
+
 @mixin g-700 {
     font-family: 'geometria-bold', sans-serif;
     font-weight: 700;

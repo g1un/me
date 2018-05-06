@@ -3,7 +3,7 @@
     text-align: center;
 
     @include after-md() {
-        padding: 0 149 / 1440 * 100% 100px;
+        padding: 0 149px 100px;
     }
 
     &__title {
@@ -11,7 +11,7 @@
         padding: 0 10px;
         text-align: center;
 
-        @include after-md() {
+        @include after-lg() {
             margin-bottom: 29px;
             text-align: left;
         }

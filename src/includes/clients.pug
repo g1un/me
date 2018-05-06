@@ -1,0 +1,10 @@
+mixin clients()
+    section.clients.me-container.clearfix
+        h2.txt-title-1.clients__title клиенты
+        ul.show-all._flex.clients__list.js-showall
+            -var i = 0
+            while i < 49
+                -i++
+                li.show-all__item.clients__item.js-showall-item
+                    img(src='img/eldorado.png', alt='')
+        .btn-1.show-all__btn.clients__btn.js-showall-btn Показать все

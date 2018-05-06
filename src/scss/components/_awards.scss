@@ -1,0 +1,126 @@
+.awards {
+    margin-bottom: 60px;
+    padding: 0 25px;
+
+    @include after-md() {
+        margin-bottom: 165px;
+        padding: 0 149px 0;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        text-align: center;
+
+        @include after-lg() {
+            margin-bottom: 100px;
+            text-align: left;
+        }
+    }
+
+    &__list {
+
+        @include after-md() {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item {
+        padding: 25px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include after-md() {
+            padding: 30px;
+            flex: 0 1 33.333%;
+            width: 33.333%;
+            flex-direction: column;
+            min-height: 290px;
+
+            &:nth-child(3n+1) {
+                align-items: flex-start;
+            }
+
+            &:nth-child(3n) {
+                align-items: flex-end;
+            }
+        }
+
+        &:not(:last-child) {
+            border-bottom: solid 1px #979797;
+
+            @include after-md() {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &__image,
+    &__result {
+        flex: 0 1 25%;
+        max-width: 25%;
+
+        @include after-md() {
+            flex: 0 1 auto;
+            max-width: 100%;
+            width: 220px;
+        }
+    }
+
+    &__image {
+        line-height: 0;
+        text-align: left;
+
+        @include after-md() {
+            flex: 1 1 auto;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 70px;
+
+            @include after-md() {
+                max-height: 120px;
+            }
+        }
+    }
+
+    &__year {
+        flex: 0 1 50%;
+        max-width: 50%;
+        padding: 0 20px;
+        opacity: .4;
+        @include msc-700();
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: 0.1px;
+        text-align: center;
+        color: #000;
+        white-space: nowrap;
+
+        @include after-md() {
+            margin-bottom: 10px;
+            flex: 0 1 auto;
+            max-width: 100%;
+            width: 220px;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+    }
+
+    &__result {
+        @include msc-700();
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: 0.1px;
+        text-align: right;
+        color: #000;
+
+        @include after-md() {
+            font-size: 14px;
+            line-height: 1.7;
+            text-align: center;
+        }
+    }
+}

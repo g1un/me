@@ -1,0 +1,26 @@
+.show-all {
+
+    &._show & {
+
+        &__item {
+
+            &:nth-child(n) {
+                display: block;
+            }
+        }
+
+        &__btn {
+            display: none;
+        }
+    }
+
+    &._flex._show & {
+
+        &__item {
+
+            &:nth-child(n) {
+                display: flex;
+            }
+        }
+    }
+}
