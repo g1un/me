@@ -40,7 +40,7 @@ export default class Indicators {
     }
 
     getArrow(val) {
-        return `<button type="button" class="slick-slider__arrow _${val} js-slick-slider-${val}">${val}</button>`;
+        return `<button type="button" class="slick-slider-arrow _${val} js-slick-slider-${val}">${val}</button>`;
     }
 
     checkWindowSize() {

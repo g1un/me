@@ -1,7 +1,7 @@
 .slick-slider {
     position: relative;
 
-    &__arrow {
+    &-arrow {
         position: absolute;
         z-index: 1;
         top: 50%;
@@ -12,6 +12,7 @@
         border-radius: 50%;
         border: 1px solid $red;
         background: #fff;
+        cursor: pointer;
         font-size: 0;
         line-height: 0;
 
@@ -44,7 +45,7 @@
         }
     }
 
-    &__dots {
+    &-dots {
         position: absolute;
         width: 100%;
 
@@ -66,6 +67,7 @@
                 border-radius: 50%;
                 border: 1px solid #000;
                 background: #fff;
+                cursor: pointer;
                 font-size: 0;
                 line-height: 0;
             }

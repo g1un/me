@@ -3,7 +3,7 @@ mixin indicators()
         h2.indicators__title Market #[span emotion]
         p.indicators__text Есть ряд показателей, необходимых каждому агентству,  чтобы быть лидером рынка
         .slick-slider.indicators__list.js-slick-slider-container
-            .slick-slider__arrows.js-slick-slider-arrows
+            .slick-slider-arrows.js-slick-slider-arrows
             .indicators__slider.js-slick-slider
                 -
                     var indicators = [
@@ -38,4 +38,4 @@ mixin indicators()
                         h3.indicators-item__title= val.title
                         .indicators-item__val= val.val
                         p.indicators-item__comment= val.comment
-            .indicators__dots.slick-slider__dots.js-slick-slider-dots
+            .indicators__dots.slick-slider-dots.js-slick-slider-dots

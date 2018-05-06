@@ -1,0 +1,56 @@
+.announcement {
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $red;
+    text-align: center;
+
+    @include after-lg() {
+
+    }
+
+    &__title {
+        @include g-900();
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: .5px;
+        color: #000;
+
+        @include after-lg() {
+            font-size: 20px;
+            line-height: 23px;
+            letter-spacing: .5px;
+        }
+    }
+
+    &__text {
+        padding-bottom: 28px;
+        position: relative;
+        @include g-500();
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: .4px;
+        color: #000;
+
+        @include after-lg() {
+            line-height: 23px;
+        }
+
+        span {
+            color: $red;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1px;
+            width: 100px;
+            background: $red;
+        }
+    }
+}

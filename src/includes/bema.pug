@@ -1,0 +1,26 @@
+mixin bema()
+    section.bema.me-container.clearfix
+        h2.txt-title-1.bema__title bema!
+        p.bema__subtitle Best Experience Marketing Awards - первая честная премия!
+        a(href='#').bema__link bema-festival.ru
+        .bema__list.js-bema-slider-container
+            .slick-slider-arrows.js-bema-slider-arrows
+            .bema__slider.js-bema-slider
+                -var i = 0
+                while i < 3
+                    -i++
+                    .bema__item
+                        .bema__item-wrapper(style=`background-image: url("http://placebeard.it/6${i}0")`)
+            .bema__dots.slick-slider-dots.js-bema-slider-dots
+        .announcement.bema__announcement
+            h3.announcement__title Save the date!
+            p.announcement__text  #[span 14-16 февраля] 2019 года
+        .bema__video
+            .bema__video-wrapper(data-url='https://vimeo.com/267187518').js-bema-video
+                .bema__video-play.js-bema-video-play
+        .bema__award
+            img(src='img/award.png', alt='bema award')
+
+
+
+

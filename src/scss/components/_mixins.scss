@@ -118,6 +118,11 @@
     font-weight: 500;
 }
 
+@mixin g-900 {
+    font-family: 'geometria-heavy', sans-serif;
+    font-weight: 900;
+}
+
 //media
 //lg
 @mixin lg() {
