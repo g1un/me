@@ -1,0 +1,21 @@
+.form {
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 12px 47px 0 rgba(0, 0, 0, 0.07);
+
+    @include after-md() {
+        padding: 40px 50px 50px;
+        box-shadow: 0 22px 37px 0 rgba(0, 0, 0, 0.07);
+    }
+
+    &__row {
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+    }
+}

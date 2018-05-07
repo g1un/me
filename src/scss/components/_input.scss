@@ -1,0 +1,23 @@
+.input {
+    padding: 6px 10px;
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 11px;
+    background: rgba(216, 216, 216, 0.3);
+    @include g-300();
+    font-size: 11px;
+    line-height: 2;
+    text-align: left;
+    color: #4f5362;
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+
+    &._textarea {
+        min-height: 120px;
+    }
+}

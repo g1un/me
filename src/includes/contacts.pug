@@ -1,0 +1,33 @@
+mixin contacts()
+    section.contacts.me-container
+        h2.txt-title-1.contacts__title Контакты
+        .contacts__wrapper
+            .contacts__data
+                .contacts__item
+                    h3 наш адрес:
+                    p Москва, ул. Правды, д. 24, с. 2а  
+                .contacts__item
+                    h3 связаться с нами: 
+                    p info@marketemotion.ru, #[span +7(495)726-55-99]
+                .contacts__logo
+                    i.icon
+                        include ../svg/logo_me.svg
+            form.form.contacts__form
+                .form-control.form__row
+                    label(for='name').form-control__label Your Name
+                    .form-control__input
+                        input(type='text', name='name', id='name').input
+                .form-control.form__row
+                    label(for='email').form-control__label Your E-mail
+                    .form-control__input
+                        input(type='text', name='email', id='email').input
+                .form-control.form__row
+                    label(for='message').form-control__label Your Message
+                    .form-control__input
+                        textarea(name='message', id='message').input._textarea
+                .form__row._flex.contacts__form-buttons
+                    .checkbox
+                        input(type='checkbox', name='send-copy', id='send-copy').checkbox__input
+                        label(for='send-copy').checkbox__label Send Me a Copy
+                    button(type='submit', name='submit', id='submit').btn.contacts__form-submit Отправить
+

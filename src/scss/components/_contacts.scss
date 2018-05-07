@@ -1,0 +1,112 @@
+.contacts {
+    margin-bottom: 100px;
+    padding: 0 20px 155px;
+    position: relative;
+
+    @include after-md() {
+        padding: 0 149px 155px;
+    }
+
+    @include after-lg {
+        margin-bottom: 215px;
+        padding-bottom: 0;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    &__wrapper {
+
+        @include after-lg() {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__data {
+        margin-bottom: 45px;
+
+        @include after-lg() {
+            margin-bottom: 0;
+            margin-right: 135px;
+        }
+    }
+
+    &__item {
+        font-size: 18px;
+        line-height: 30px;
+        color: #010000;
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            @include g-700();
+        }
+
+        p {
+            @include g-300();
+
+            span {
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+
+        @include after-lg() {
+            text-align: left;
+        }
+    }
+
+    &__form {
+        margin: 0 auto;
+        max-width: 440px;
+        text-align: center;
+
+        @include after-lg() {
+            flex: 0 1 50%;
+            max-width: 50%;
+        }
+
+        &-buttons {
+            display: flex;
+            flex-direction: column-reverse;
+
+            @include after-lg() {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        &-submit {
+            margin: 30px 0 20px;
+
+            @include after-lg() {
+                margin: 0;
+            }
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        svg {
+            width: 106px;
+            height: auto;
+        }
+
+        @include after-lg() {
+            margin-top: 30px;
+            position: static;
+            transform: none;
+        }
+    }
+}
