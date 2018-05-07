@@ -1,0 +1,41 @@
+mixin team()
+    section.team.me-container._xs
+        h2.txt-title-1.team__title Команда
+        ul.team__principals
+            -
+                var principals = [
+                    {
+                        image: 'img/principal-1.jpg',
+                        name: 'Илья Горбачев',
+                        position: 'Генеральный директор',
+                        text: 'Моя цель – создать компанию №1 в россии по организации мероприятий с четко отстроенными бизнес-процессами и лучшими специалистами в своих областях деятельности. я лично контролирую, чтобы мы являлись надежными партнерами для наших клиентов, на которых они всегда могут положиться при решении задач, связанных с организацией мероприятий.'
+                    },
+                    {
+                        image: 'img/principal-2.jpg',
+                        name: 'Елена Горбачева',
+                        position: 'Креаитивный директор',
+                        text: 'Моя цель – создать компанию №1 в россии по организации мероприятий с четко отстроенными бизнес-процессами и лучшими специалистами в своих областях деятельности. я лично контролирую, чтобы мы являлись надежными партнерами для наших клиентов, на которых они всегда могут положиться при решении задач, связанных с организацией мероприятий.'
+                    }
+                ]
+            each val in principals
+                li.principal.team__principal
+                    .principal__image.principal__item
+                        img(src=val.image, alt='')
+                    .principal__info.principal__item
+                        .principal__info-wrapper
+                            h3.principal__name= val.name
+                            p.principal__position= val.position
+                            p.principal__text= val.text
+        .team__list.js-teammates
+            .team__list-arrows.slick-slider-arrows._bottom.js-adaptive-slider-arrows
+            .team__list-slider.js-adaptive-slider
+                -var i = 0
+                while i < 6
+                    -i++
+                    .teammate.team__worker
+                        .teammate__image
+                            img(src='img/principal-1.jpg', alt='')
+                        h4.teammate__name Константин Константинопольский
+                        p.teammate__position Генеральный директор
+                        p.teammate__text lorem  ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            .team__list-dots.slick-slider-dots.js-adaptive-slider-dots

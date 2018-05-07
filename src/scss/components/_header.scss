@@ -150,6 +150,18 @@
         }
     }
 
+    &._white:not(._scrolled) & {
+
+        &__sandwich {
+            color: #000;
+
+            &:before,
+            &:after {
+                background: #000;
+            }
+        }
+    }
+
     &__menu {
         display: none;
 

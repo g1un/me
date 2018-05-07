@@ -1,6 +1,58 @@
 .slick-slider {
     position: relative;
 
+    &-arrows {
+
+        &._bottom {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .slick-slider-arrow {
+                position: relative;
+                top: auto;
+                left: auto;
+                right: auto;
+                transform: none;
+                width: 40px;
+                height: 40px;
+
+                @include after-sm() {
+                    width: 36px;
+                    height: 36px;
+                }
+
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+
+                &._prev {
+
+                    &:before {
+                        left: 14px;
+
+                        @include after-sm() {
+                            left: 12px;
+                        }
+                    }
+                }
+
+                &._next {
+
+                    &:before {
+                        left: 8px;
+
+                        @include after-sm() {
+                            left: 7px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     &-arrow {
         position: absolute;
         z-index: 1;

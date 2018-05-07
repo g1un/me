@@ -1,0 +1,120 @@
+.principal {
+
+    @include after-lg() {
+        display: flex;
+
+        &:nth-child(2n) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__item {
+
+        @include after-lg() {
+            flex: 0 1 50%;
+        }
+    }
+
+    &__image {
+        margin-bottom: 32px;
+        line-height: 0;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+            max-height: 380px;
+        }
+
+        @include after-lg() {
+
+            img {
+                width: 100%;
+                max-height: none;
+            }
+        }
+    }
+
+    &:nth-child(2n+1) & {
+
+        &__image {
+
+            @include after-lg() {
+                margin-bottom: 0;
+                text-align: left;
+            }
+        }
+    }
+
+    &:nth-child(2n) & {
+
+        &__image {
+
+            @include after-lg() {
+                text-align: right;
+            }
+        }
+    }
+
+    &__info {
+
+        @include after-lg() {
+            padding: 0 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &-wrapper {
+                max-width: 400px;
+            }
+        }
+    }
+
+    &__name {
+        margin-bottom: 20px;
+        @include g-500();
+        font-size: 24px;
+        line-height: 1.5;
+        text-align: center;
+        color: $red;
+        text-transform: uppercase;
+
+        @include after-lg() {
+            margin-bottom: 15px;
+            font-size: 36px;
+            line-height: normal;
+            text-align: left;
+        }
+    }
+
+    &__position {
+        margin: 0 20px 26px;
+        padding: 0 0 27px;
+        border-bottom: 1px solid $red;
+        @include g-500();
+        font-size: 16px;
+        line-height: normal;
+        text-align: center;
+        color: #000;
+
+        @include after-lg() {
+            margin: 0 0 40px;
+            padding-bottom: 34px;
+            align-self: stretch;
+            font-size: 19px;
+            text-align: left;
+        }
+    }
+
+    &__text {
+        @include g-400();
+        font-size: 14px;
+        line-height: 2;
+        text-align: center;
+        color: #000;
+        text-transform: uppercase;
+
+        @include after-lg() {
+            text-align: left;
+        }
+    }
+}

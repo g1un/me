@@ -1,5 +1,5 @@
-mixin header()
-    header.header.js-header
+mixin header(type)
+    header.header(class=`${type ? type : ''}`).js-header
         a(href='#').header__logo
             i.icon.header__logo-icon
                 include ../svg/logo_me.svg

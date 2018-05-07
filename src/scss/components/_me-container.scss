@@ -1,8 +1,22 @@
 .me-container {
+    margin: 0 auto;
+    max-width: 1440px;
+
+    &._padding-top {
+        padding-top: 122px;
+    }
+
+    &._xs {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @include after-md() {
+            padding-left: 149px;
+            padding-right: 149px;
+        }
+    }
 
     @include after-md() {
-        margin: 0 auto;
-        max-width: 1440px;
         padding: 0 149px;
     }
 }

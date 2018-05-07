@@ -15,6 +15,10 @@
     &__title {
         margin-bottom: 25px;
         text-align: center;
+
+        @include after-lg() {
+            text-align: left;
+        }
     }
 
     &__wrapper {

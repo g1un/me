@@ -1,2 +1,169 @@
 mixin footer()
-    footer.footer
+    +contacts()
+    +map()
+    script.
+        function initMap() {
+
+            var coords = {
+                lat: 55.787792,
+                lng: 37.583969
+            };
+
+            var locations = [
+                {
+                    title: 'м. Белорусская',
+                    label: 'Б',
+                    coords: {lat: 55.7775411, lng: 37.5821263},
+                    icon: {
+                        url: 'img/marker_bel.png',
+                        scaledSize: new google.maps.Size(110, 50)
+                    }
+                },
+                {
+                    title: 'м. Савёловская',
+                    label: 'С',
+                    coords: {lat: 55.7941981, lng: 37.5888962},
+                    icon: {
+                        url: 'img/marker_sav.png',
+                        scaledSize: new google.maps.Size(110, 50)
+                    }
+                }
+
+            ];
+
+            var map = new google.maps.Map(
+                document.getElementById('map'), {
+                    zoom: 13,
+                    streetViewControl: false,
+                    mapTypeControl: false,
+                    center: coords,
+                    styles: [{
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#cdcdcd"}]
+                    }, {
+                        "elementType": "labels.icon",
+                        "stylers": [{"visibility": "off"}]
+                    }, {
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#ffffff"}]
+                    }, {
+                        "elementType": "labels.text.stroke",
+                        /*"stylers": [{"color": "#212121"}]*/
+                        "stylers": [{"color": "#d9d9d9"}]
+                    }, {
+                        "featureType": "administrative",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#757575"}]
+                    }, {
+                        "featureType": "administrative.country",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#9e9e9e"}]
+                    }, {
+                        "featureType": "administrative.land_parcel",
+                        "elementType": "geometry",
+                        "stylers": [{"visibility": "on"}]
+                    }, {
+                        "featureType": "administrative.land_parcel",
+                        "elementType": "geometry.fill",
+                        "stylers": [{"visibility": "on"}]
+                    }, {
+                        "featureType": "administrative.land_parcel",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{"visibility": "on"}]
+                    }, {
+                        "featureType": "administrative.locality",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#292929"}]
+                    }, {
+                        "featureType": "landscape.man_made",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#b1b1b1"}]
+                    }, {
+                        "featureType": "landscape.man_made",
+                        "elementType": "geometry.fill",
+                        "stylers": [{"color": "#ebebeb"}, {"visibility": "on"}]
+                    }, {
+                        "featureType": "poi",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#757575"}]
+                    }, {
+                        "featureType": "poi.park",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#cdcdcd"}]
+                    }, {
+                        "featureType": "poi.park",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#292929"}]
+                    }, {
+                        "featureType": "poi.park",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{"color": "#9e9e9e"}]
+                    }, {
+                        "featureType": "road",
+                        "elementType": "geometry.fill",
+                        "stylers": [{"color": "#ffffff"}]
+                    }, {
+                        "featureType": "road",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#393939"}]
+                    }, {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#cecece"}]
+                    }, {
+                        "featureType": "road.highway",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#aeaeae"}]
+                    }, {
+                        "featureType": "road.highway.controlled_access",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#4e4e4e"}]
+                    }, {
+                        "featureType": "road.local",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#616161"}]
+                    }, {
+                        "featureType": "transit",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#757575"}]
+                    }, {
+                        "featureType": "water",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#c1c1c1"}]
+                    }, {"featureType": "water", "elementType": "labels.text.fill", "stylers": [{"color": "#3d3d3d"}]}]
+
+                }
+            );
+
+            var marker_moscow = new google.maps.Marker({
+                position: coords,
+                map: map,
+                icon: {
+                    url: 'img/marker_location.png',
+                    scaledSize: new google.maps.Size(58, 59)
+                }
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                color: '#000000'
+            });
+
+            for (var i in locations) {
+
+                var marker = new google.maps.Marker({
+                    position: locations[i].coords,
+                    map: map,
+                    title: locations[i].title,
+                    icon: locations[i].icon
+                })
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i].title);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+
+            }
+        }
+    script(async, defer, src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-l9z83uh5pQ92fBx13roc63HkJukK56Y&language=ru&callback=initMap")

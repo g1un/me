@@ -8,7 +8,8 @@ import Portfolio from './components/portfolio';
 import BemaSlider from './components/bemaSlider';
 import BemaVideo from './components/bemaVideo';
 import ShowAll from './components/showAll';
-import ReviewsSlider from './components/reviewsSlider';
+import SlickSliderFirst from './components/slickSliderFirst';
+import AdaptiveSlider from './components/adaptiveSlider';
 
 new MeVimeo().init();
 new Header().init();
@@ -18,4 +19,20 @@ new Portfolio().init();
 new BemaSlider().init();
 new BemaVideo().init();
 new ShowAll().init();
-new ReviewsSlider().init();
+
+let reviewsSlider = new SlickSliderFirst(
+    '.js-reviews',
+    {
+        dots: false,
+    }
+);
+reviewsSlider.init();
+
+let teammatesSlider = new AdaptiveSlider(
+    '.js-teammates',
+    {
+        dots: true,
+    },
+    1200
+);
+teammatesSlider.init();
