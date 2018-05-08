@@ -150,7 +150,7 @@
         }
     }
 
-    &._white:not(._scrolled) & {
+    &._white:not(._scrolled):not(._opened) & {
 
         &__sandwich {
             color: #000;
@@ -254,6 +254,20 @@
 
             @include after-sm() {
                 display: none;
+            }
+        }
+    }
+
+    &._white:not(._scrolled):not(._opened) & {
+
+        &__social {
+
+            svg {
+
+                path {
+
+                    fill: #000;
+                }
             }
         }
     }

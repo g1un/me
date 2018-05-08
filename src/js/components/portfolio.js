@@ -1,17 +1,41 @@
-export default class Portfolio {
+export class Portfolio {
     constructor() {
-        this.portfolio = document.querySelector('.js-portfolio');
+        this.portfolios = document.querySelectorAll('.js-portfolio');
     }
 
     init() {
-        if(!this.portfolio) return;
+        if(!this.portfolios.length) return;
 
-        this.btn = this.portfolio.querySelector('.js-portfolio-btn');
+        [].forEach.call(this.portfolios, (portfolio, i) => {
+            let btn = portfolio.querySelector('.js-portfolio-btn');
 
-        this.btn.addEventListener('click', () => this.showAll());
+            btn.addEventListener('click', () => this.showAll(portfolio));
+        });
     }
 
-    showAll() {
-        this.portfolio.classList.add('_show-all');
+    showAll(portfolio) {
+        portfolio.classList.add('_show-all');
+    }
+}
+
+export class PortfolioSelect {
+    constructor() {
+        this.portfolioSelect = document.querySelector('.js-portfolio-page-select');
+    }
+
+    init() {
+        if(!this.portfolioSelect) return;
+
+        this.lists = document.querySelectorAll('.js-portfolio-page-list');
+
+        $(this.portfolioSelect).on('change', e => this.onSelectChange(e));
+    }
+
+    onSelectChange({target}) {
+        [].forEach.call(this.lists, list => {
+            list.classList.remove('_show');
+        });
+
+        this.lists[target.value].classList.add('_show');
     }
 }

@@ -1,14 +1,42 @@
-mixin portfolio()
-    section.portfolio.me-container.js-portfolio
+mixin portfolio(nav)
+    section.portfolio(class=`${nav ? '_nav' : ''}`).me-container
         h2.txt-title-1.portfolio__title портфолио
-        ul.portfolio__list
-            -var i = 0
-            while i < 9
-                -i++
-                li.portfolio__item
-                    .portfolio__item-wrapper
-                        a(href='#', style=`background-image: url('http://placebeard.it/6${i}0');`).portfolio__link
-                            span.portfolio__link-title Очень длинное название номер #{i}
-                            .portfolio__link-hover
-                                i.icon.portfolio__link-icon !{svg['portfolio-icon']}
-        .btn-1.portfolio__btn.js-portfolio-btn Показать все
+        if nav
+            .select.portfolio__nav.js-select
+                -
+                    var portfolioNav = ['Все проекты', 'Business', 'Entertaiment', 'Openair']
+                select(style='display: none;').js-select-native.js-portfolio-page-select
+                    each val, i in portfolioNav
+                        option(value=i, selected=(i === 0))= val
+                button.select__active.js-select-active= portfolioNav[0]
+                ul.select__list.js-select-list
+                    each val, i in portfolioNav
+                        li.select__item
+                            button.select__btn(class=`${i === 0 ? '_active' : ''}`).js-select-item= val
+        .portfolio__section(class=`${nav ? '_show js-portfolio-page-list' : ''}`).js-portfolio
+            ul.portfolio__list.js-portfolio-list
+                -var i = 0
+                while i < 9
+                    -i++
+                    li.portfolio__item
+                        .portfolio__item-wrapper
+                            a(href='#', style=`background-image: url('http://placebeard.it/6${i}0');`).portfolio__link
+                                span.portfolio__link-title Очень длинное название номер #{i}
+                                .portfolio__link-hover
+                                    i.icon.portfolio__link-icon !{svg['portfolio-icon']}
+            .btn-1.portfolio__btn.js-portfolio-btn Показать все
+        if nav
+            -var cutPortfolioNav = portfolioNav.shift();
+            each val, index in portfolioNav
+                .portfolio__section.js-portfolio.js-portfolio-page-list
+                    ul.portfolio__list.js-portfolio-list
+                        -var i = 0
+                        while i < 9
+                            -i++
+                            li.portfolio__item
+                                .portfolio__item-wrapper
+                                    a(href='#', style=`background-image: url('http://placebeard.it/${index+5}${i}0');`).portfolio__link
+                                        span.portfolio__link-title Очень длинное название номер #{i}
+                                        .portfolio__link-hover
+                                            i.icon.portfolio__link-icon !{svg['portfolio-icon']}
+                    .btn-1.portfolio__btn.js-portfolio-btn Показать все
