@@ -1,0 +1,58 @@
+.gallery {
+    margin-bottom: 155px;
+    position: relative;
+
+    @include after-lg() {
+        margin-bottom: 115px;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -96px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: $red;
+
+        @include after-lg() {
+            bottom: -50px;
+        }
+    }
+
+    &__slider {
+
+        @include after-lg() {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+        line-height: 0;
+        text-align: center;
+
+        &:hover,
+        &:focus {
+            outline: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        @include after-lg() {
+            flex: 0 1 31%;
+            margin-bottom: 40px;
+
+            &:not(:nth-child(3n)) {
+                margin-right: 3.5%;
+            }
+        }
+    }
+
+    &__dots {
+        bottom: -32px;
+    }
+}

@@ -1,6 +1,7 @@
 //EXTERNAL
 @import "components/sprite";
 @import "~slick-carousel/slick/slick";
+@import "~magnific-popup/src/css/main";
 
 //BASE
 @import "components/variables";
@@ -27,6 +28,7 @@
 @import "components/form";
 @import "components/teammate";
 @import "components/principal";
+@import "components/gallery";
 
 //CUSTOM
 @import "components/player";
@@ -43,3 +45,4 @@
 @import "components/contacts";
 @import "components/map";
 @import "components/team";
+@import "components/project";

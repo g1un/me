@@ -1,0 +1,153 @@
+.project {
+
+    &__title {
+        margin-bottom: 32px;
+
+        @include after-lg() {
+            margin-bottom: 58px;
+        }
+    }
+
+    &__logo {
+        margin-bottom: 20px;
+        padding-bottom: 38px;
+        border-bottom: 1px solid $red;
+        line-height: 0;
+
+        img {
+            max-width: 110px;
+        }
+
+        @include after-lg() {
+            padding-bottom: 51px;
+            margin-bottom: 53px;
+
+            img {
+                max-width: 130px;
+            }
+        }
+    }
+
+    &__info {
+        margin-bottom: 73px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include after-md() {
+            margin-bottom: 58px;
+            justify-content: flex-start;
+        }
+    }
+
+    &__param {
+        flex: 0 1 280px;
+        padding: 20px 0;
+        display: flex;
+        align-content: center;
+
+        @include after-md() {
+            flex: 0 1 auto;
+            min-width: 164px;
+        }
+
+        @include after-lg() {
+            padding: 0;
+            align-items: flex-end;
+        }
+
+        svg {
+            margin-right: 23px;
+            width: 39px;
+            height: 39px;
+            flex: 0 0 39px;
+            min-width: 39px;
+
+            @include after-lg() {
+                margin-right: 20px;
+            }
+        }
+
+        span {
+            display: block;
+
+            &:first-child {
+                margin-bottom: 10px;
+                @include g-300();
+                font-size: 14px;
+                line-height: normal;
+                color: #202020;
+            }
+
+            &:last-child {
+                @include g-300();
+                font-size: 22px;
+                line-height: normal;
+                color: #202020;
+
+                @include after-md() {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    &__image {
+        margin-bottom: 86px;
+        line-height: 0;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+        }
+
+        @include after-lg() {
+            margin-bottom: 74px;
+        }
+    }
+
+    &__desc {
+        margin-bottom: 90px;
+
+        @include after-lg() {
+            margin-bottom: 129px;
+        }
+
+        &-item {
+
+            &:not(:last-child) {
+                margin-bottom: 60px;
+
+                @include after-lg() {
+                    margin-bottom: 129px;
+                }
+            }
+
+            h3 {
+                margin-bottom: 5px;
+                @include g-700();
+                font-size: 22px;
+                line-height: normal;
+                color: #000;
+                text-transform: uppercase;
+
+                @include after-lg() {
+                    margin-bottom: 20px;
+                    font-size: 70px;
+                }
+            }
+
+            p {
+                @include g-300();
+                font-size: 16px;
+                line-height: 1.31;
+                color: #202020;
+
+                @include after-lg() {
+                    font-size: 22px;
+                    line-height: 1.32;
+                }
+            }
+        }
+    }
+}

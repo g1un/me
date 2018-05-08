@@ -10,3 +10,30 @@
         line-height: 0.87;
     }
 }
+
+.txt-title-2 {
+    @include g-700();
+    font-size: 30px;
+    line-height: 1.4;
+    text-align: left;
+    color: #202020;
+    text-transform: uppercase;
+
+    @include after-lg() {
+        font-size: 70px;
+        line-height: 1.03;
+    }
+}
+
+.txt-title-3 {
+    @include g-700();
+    font-size: 22px;
+    line-height: normal;
+    text-align: left;
+    color: #000;
+
+    @include after-lg() {
+        font-size: 83px;
+        line-height: 0.87;
+    }
+}

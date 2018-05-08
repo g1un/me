@@ -95,6 +95,31 @@
                 transform: translateY(-50%) rotate(-135deg);
             }
         }
+
+        &._white {
+            width: 42px;
+            height: 42px;
+            border: none;
+
+            &:before {
+                width: 14px;
+                height: 14px;
+                border-left: 3px solid $red;
+                border-bottom: 3px solid $red;
+            }
+
+            &._prev {
+                left: 20px;
+
+                &:before {
+                    left: 16px;
+                }
+            }
+
+            &._next {
+                right: 20px;
+            }
+        }
     }
 
     &-dots {

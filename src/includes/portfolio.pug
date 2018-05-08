@@ -1,6 +1,6 @@
-mixin portfolio(nav)
-    section.portfolio(class=`${nav ? '_nav' : ''}`).me-container
-        h2.txt-title-1.portfolio__title портфолио
+mixin portfolio(nav, title)
+    section.portfolio(class=attributes.class + `${nav ? '_nav' : ''}`).me-container
+        h2.txt-title-1.portfolio__title= title ? title : 'портфолио'
         if nav
             .select.portfolio__nav.js-select
                 -

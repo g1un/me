@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="89px" height="89px" viewBox="0 0 89 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Fill 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Fill-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M44.5113233,3.04707439 C21.2871116,3.32995658 3.0275558,21.5778017 2.91803059,44.4650119 C2.80704505,67.5038703 21.4876644,85.9791877 44.3244003,86.0034903 C67.3889485,86.0282789 85.6674887,67.7848082 85.9186665,45.0730628 C86.1795799,21.4616353 67.4493091,3.4519556 44.5113233,3.04707439 M44.5395564,89 C19.7644678,88.924662 0.326907577,69.2429638 0.00417329938,45.3549729 C-0.333164339,20.4487032 19.8258019,-0.020398922 43.9559088,1.5256323e-05 C68.5465083,0.0209154865 89.0257749,20.1488092 88.9999757,44.2705911 C88.9732028,68.9129346 69.004567,89.0024303 44.5395564,89" fill="#FA0034"></path>
+        <circle id="Oval" stroke="#EA223E" cx="24" cy="52" r="8"></circle>
+        <circle id="Oval" stroke="#EA223E" cx="44" cy="52" r="8"></circle>
+        <circle id="Oval" stroke="#EA223E" cx="64" cy="52" r="8"></circle>
+        <circle id="Oval" stroke="#EA223E" cx="34" cy="32" r="8"></circle>
+        <circle id="Oval" stroke="#EA223E" cx="54" cy="32" r="8"></circle>
+    </g>
+</svg>

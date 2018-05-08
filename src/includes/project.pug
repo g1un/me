@@ -1,0 +1,45 @@
+mixin project()
+    section.project.me-container._xs
+        h2.txt-title-2.project__title Большая тренировка с МАТЧ ТВ
+        .project__logo
+            img(src='img/project-logo.png', alt='')
+        .project__info
+            .project__param
+                include ../svg/people.svg
+                p
+                    span Человек
+                    span 4000
+            .project__param
+                include ../svg/date.svg
+                p
+                    span 10 сентября
+                    span 2017
+            .project__param
+                include ../svg/place.svg
+                p
+                    span Город
+                    span Нижний Новогород
+        .project__image
+            img(src='img/project-image.jpg', alt='')
+        .project__desc
+            -
+                var projectDesc = [
+                    {
+                        title: 'Задача',
+                        text: 'Организовать мероприятие, приуроченное к празднованию дня города Тула. Застроить центральную площадь под многофункциональную спортивную арену.'
+                    },
+                    {
+                        title: 'Решение',
+                        text: 'Нам удалось на целый день погрузить жителей города в атмосферу спорта: мастер-классы от Тины Канделаки, а также показательные выступления чемпионов России по экстремальным видам спорта.'
+                    },
+                    {
+                        title: 'Инструменты',
+                        text: 'Нам удалось на целый день погрузить жителей города в атмосферу спорта: мастер-классы от Тины Канделаки, а также показательные выступления чемпионов России по экстремальным видам спорта.'
+                    }
+                ]
+            each val in projectDesc
+                .project__desc-item
+                    h3= val.title
+                    p= val.text
+        +gallery().project__gallery
+

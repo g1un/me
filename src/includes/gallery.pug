@@ -1,0 +1,10 @@
+mixin gallery()
+    .gallery(class=attributes.class).js-gallery
+        .gallery__arrows.slick-slider-arrows.js-adaptive-slider-arrows
+        .gallery__slider.js-adaptive-slider
+            -var i = 0
+            while i < 9
+                -i++
+                .gallery__item.js-gallery-item
+                    img(src=`img/project-image-${i % 2}.jpg`, alt='')
+        .gallery__dots.slick-slider-dots.js-adaptive-slider-dots

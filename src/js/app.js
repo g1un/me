@@ -11,6 +11,8 @@ import ShowAll from './components/showAll';
 import SlickSliderFirst from './components/slickSliderFirst';
 import AdaptiveSlider from './components/adaptiveSlider';
 import Select from './components/select';
+import GallerySlider from './components/gallerySlider';
+import GalleryPopup from './components/galleryPopup';
 
 new MeVimeo().init();
 new Header().init();
@@ -21,22 +23,23 @@ new BemaSlider().init();
 new BemaVideo().init();
 new ShowAll().init();
 
-let reviewsSlider = new SlickSliderFirst(
+new SlickSliderFirst(
     '.js-reviews',
     {
         dots: false,
     }
-);
-reviewsSlider.init();
+).init();
 
-let teammatesSlider = new AdaptiveSlider(
+new AdaptiveSlider(
     '.js-teammates',
     {
         dots: true,
     },
     1200
-);
-teammatesSlider.init();
+).init();
+
+new GallerySlider().init();
 
 new Select('.js-select').init();
 new PortfolioSelect().init();
+new GalleryPopup().init();

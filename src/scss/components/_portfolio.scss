@@ -28,6 +28,18 @@
         }
     }
 
+    &._project-page & {
+
+        &__title {
+
+            @extend .txt-title-3;
+
+            @include after-lg() {
+                margin-bottom: 100px;
+            }
+        }
+    }
+
     &__section {
 
         &._show-all {
@@ -39,11 +51,6 @@
                 }
             }
         }
-
-        @include after-md() {
-            padding-bottom: 30px;
-            border-bottom: 1px solid $red;
-        }
     }
 
     &._nav & {
@@ -54,6 +61,18 @@
             &._show {
                 display: block;
             }
+
+            @include after-md() {
+                padding-bottom: 30px;
+                border-bottom: 1px solid $red;
+            }
+        }
+    }
+
+    &._project-page & {
+
+        &__section {
+            border-bottom: 1px solid $red;
         }
     }
 
