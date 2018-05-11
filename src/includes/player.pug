@@ -7,27 +7,27 @@ mixin player()
                         {
                             title: 'MarketEmotion',
                             image: 'img/header.jpg',
-                            video: 'https://vimeo.com/264078493'
+                            video: '975102407'
                         },
                         {
                             title: 'Entertainment',
                             image: 'http://placebeard.it/1440/1080',
-                            video: 'https://vimeo.com/265197512'
+                            video: '980304090'
                         },
                         {
                             title: 'Business',
                             image: 'http://placebeard.it/1080/1440',
-                            video: 'https://vimeo.com/266837768'
+                            video: '988097831'
                         },
                         {
                             title: 'Openair',
                             image: 'http://placebeard.it/1440/900',
-                            video: 'https://vimeo.com/266838348'
+                            video: '988100618'
                         }
                     ]
                 each val, i in slides
                     .player__item(class=`${i === 0 ? '_active' : ''}`, style=`background-image: url(${val.image})`).js-player-slider-item
-                        .player__video(data-url=val.video, style='display: none;').js-player-video
+                        video.player__video(data-src=`video/${val.video}.mp4`, style='display:none;').js-player-video
         .player__wrapper
             .player__controls
                 each val, i in slides
@@ -38,7 +38,7 @@ mixin player()
                         h4.video-desc__title= val.title
                         p.video-desc__text
                             |incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco quaerat voluptatem.
-                        a(href=val.video, target='_blank').video-desc__link
+                        a(href=`https://vimeo.com/${val.video}`, target='_blank').video-desc__link
                             i.icon
                                 include ../svg/vimeo_logo.svg
                             span Смотреть на Vimeo

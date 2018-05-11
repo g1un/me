@@ -115,13 +115,13 @@ let config = (env, argv) => {
 
                 },
                 {
-                    test: /\.(jpe?g|png|gif|svg)$/i,
-                    include: [ SRC_DIR + '/img' ],
+                    test: /\.(jpe?g|png|gif|svg|mp4)$/i,
+                    include: [ SRC_DIR + '/img', SRC_DIR + '/video' ],
                     use: [
                         {
                             loader: 'file-loader',
                             options: {
-                                name: 'img/[name].[ext]'
+                                name: '[path]/[name].[ext]'
                             }
                         }
                     ]

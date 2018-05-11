@@ -1,6 +1,7 @@
 import './../scss/style.scss';
 
-import MeVimeo from './components/meVimeo';
+// import MeVimeo from './components/meVimeo';
+import Video from './components/video';
 import Header from './components/header';
 import Sandwich from './components/sandwich';
 import SlickSlider from './components/slickSlider';
@@ -14,7 +15,8 @@ import Select from './components/select';
 import GallerySlider from './components/gallerySlider';
 import GalleryPopup from './components/galleryPopup';
 
-new MeVimeo().init();
+// new MeVimeo().init();
+new Video().init();
 new Header().init();
 new Sandwich().init();
 new SlickSlider().init();

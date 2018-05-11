@@ -22,7 +22,12 @@
 
     &__slider {
 
+        @include after-sm() {
+            margin: 0 -20px;
+        }
+
         @include after-lg() {
+            margin: 0;
             display: flex;
             flex-wrap: wrap;
         }
@@ -42,8 +47,13 @@
             max-width: 100%;
         }
 
+        @include after-sm() {
+            padding: 0 20px;
+        }
+
         @include after-lg() {
             flex: 0 1 31%;
+            padding: 0;
             margin-bottom: 40px;
 
             &:not(:nth-child(3n)) {
